@@ -97,7 +97,11 @@
         return $.css(elem, marginLeft);
       },
       set: function(elem, value) {
-        $(elem).exdent({ by: value });
+        if (value == 'detect') {
+          $(elem).exdent({ detect: true });
+        } else {
+          $(elem).exdent( {by: value} );
+        }
       }
     };
   }
